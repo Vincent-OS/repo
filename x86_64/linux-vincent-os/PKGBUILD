@@ -2,7 +2,7 @@
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-vincent-os
-pkgver=6.6.8.origin
+pkgver=6.7.2.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
@@ -32,14 +32,13 @@ _srcname=linux-${pkgver%.*}
 _srctag=v${pkgver%.*}-${pkgver##*.}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
-  $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   config  # the main kernel config file
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
-  
+  EE4462B7092CDF3616CDA56D03BC98E28803CA52 # v38armageddon
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 sha256sums=('5036c434e11e4b36d8da3f489851f7f829cf785fa7f7887468537a9ea4572416'
@@ -58,6 +57,12 @@ export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
 prepare() {
+  # Number of CPU Cores
+  _CORES=$(cat /proc/cpuinfo|grep processor|wc -l)
+  if [ $_CORES -lt 1 ]; then
+		_CORES=2
+	fi
+  
   cd $_srcname
 
   echo "Setting version..."
@@ -90,7 +95,7 @@ prepare() {
 
 build() {
   cd $_srcname
-  make LLVM=1 all
+  make LLVM=1 -j$_CORES all
   make LLVM=1 htmldocs
 }
 
