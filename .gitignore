@@ -1,4 +1,5 @@
 # Ignore all generated files
-/src
-linux-*
-/pkg
+/x86_64/*/src
+*.tar.*
+/x86_64/*/pkg
+*.deb
