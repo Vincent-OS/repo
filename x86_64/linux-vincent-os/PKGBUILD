@@ -2,7 +2,7 @@
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-vincent-os
-pkgver=6.7.4.origin
+pkgver=6.7.5.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
@@ -37,20 +37,20 @@ source=(
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
-  A2FF3A36AAA56654109064AB19802F8B0D70FC30  # Jan Alexander Steffens (heftig)
+  83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
   EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('5036c434e11e4b36d8da3f489851f7f829cf785fa7f7887468537a9ea4572416'
+sha256sums=('29f6464061b8179cbb77fc5591e06a2199324e018c9ed730ca3e6dfb145539ff'
             'SKIP'
-            '77f0ad619945e18ab880733129a49ad0af28c3f2fd7b1ae9bbb6465b5a4cd316'
+            'ddda647fc993000167b12b0d0e5cc1663ecb029f7a32d7334a61de9f81429f3e'
             'SKIP'
-            '18fcff9fa723cef2feb654dae966a149f0ef0fea9dda1780d3de0ff07d4f8ab7')
-b2sums=('d6f58bfae29239f985c1aa329b19c2fdea1c08c79e819e60f85359e9ef00e97a7f72d74662df7d9def75ff85a3b4bdf36dc9ded578ee472e9b4efa7bf50fcd33'
+            '0f191864fd0d72c91b3f3b9e6ed6f38042bf3631ae394fedcf103c7d7755c793')
+b2sums=('91e5abb3905ba9e8b5cdf26b89758f4454b4e573f148fb08340c60852115d95068e44420d73373a406cb47fb011fc14ee65294489f197a3f7f39d3d8e24b2f2d'
         'SKIP'
-        '3445b1884f0ec6fccd72091e23c74538c80991195aab53f54c9a955437e35951ba689aa59eee35f2faa2440273e3c384e043333e63a22ce41dc5cd9d054d1a2f'
+        '24794074af31f8d7488b25d9264502f44c3cb9ff3db2412e83f6af959fd6a8b7b48153570bcedaaae74c80a17a01b4ba4d34e3cb3e344961a57195db5683ae38'
         'SKIP'
-        '72b204712173dd109f60c6c81a10dc24c64eba7c2be8182a520b52f31ba2ecc4082fc711656a7e4893aac26120f9271c1fda3e37ad94236db95b14a6fdb56a82')
+        'cdfa71c3e06a722276216b89a84f9e788f13afa0d27ef2f80cfc3f51b0f6fc847260b706f3492147a58f9bf7b40a9d836d3cad2bc5274f3bf0817b35134593f8')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
