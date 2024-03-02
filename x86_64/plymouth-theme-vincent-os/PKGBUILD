@@ -1,0 +1,29 @@
+# Maintainer: v38armageddon <contact@v38armageddon.net>
+pkgname=plymouth-theme-vincent-os
+pkgver=1.0
+pkgrel=1
+pkgdesc="Plymouth Theme for Vincent OS "
+arch=('x86_64')
+url="https://github.com/Vincent-OS/plymouth-theme"
+license=('GPL')
+depends=('plymouth')
+optdepends=()
+source=("$pkgname-$pkgver.tar.gz"
+        "$pkgname-$pkgver.patch")
+themename=vincent-os
+
+prepare() {
+	cd "${srcdir}"
+	mv ${_pkgname}
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	mkdir -p "${pkgdir}"
+	cp -r * "$pkgdir"
+}

@@ -2,7 +2,7 @@
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-vincent-os
-pkgver=6.7.5.origin
+pkgver=6.7.6.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
