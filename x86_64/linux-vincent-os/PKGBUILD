@@ -1,8 +1,7 @@
 # Maintainer: v38armageddon <contact@v38armageddon.net>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-vincent-os
-pkgver=6.7.7.origin
+pkgver=6.7.9.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
