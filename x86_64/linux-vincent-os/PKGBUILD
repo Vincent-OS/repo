@@ -1,7 +1,7 @@
 # Maintainer: v38armageddon <contact@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.7.9.origin
+pkgver=6.8.2.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
@@ -24,6 +24,7 @@ makedepends=(
   graphviz
   imagemagick
   python-sphinx
+  python-yaml
   texlive-latexextra
 )
 options=('!strip')
@@ -40,16 +41,12 @@ validpgpkeys=(
   EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('29f6464061b8179cbb77fc5591e06a2199324e018c9ed730ca3e6dfb145539ff'
+sha256sums=('9ac322d85bcf98a04667d929f5c2666b15bd58c6c2d68dd512c72acbced07d04'
             'SKIP'
-            'ddda647fc993000167b12b0d0e5cc1663ecb029f7a32d7334a61de9f81429f3e'
-            'SKIP'
-            '0f191864fd0d72c91b3f3b9e6ed6f38042bf3631ae394fedcf103c7d7755c793')
-b2sums=('91e5abb3905ba9e8b5cdf26b89758f4454b4e573f148fb08340c60852115d95068e44420d73373a406cb47fb011fc14ee65294489f197a3f7f39d3d8e24b2f2d'
+            'c6ed41fce0fceabee8a55178d76623f6f89e521279f3c81e1df6cdb1390091db')
+b2sums=('f057c2512040600fbf0df67cf9c7200aee0c06b82b3cf749be8c5685844d2662a585ce17685c7af880c0d9dbbbd81302e5a1fa41c3dbd39869123121a0e82dc2'
         'SKIP'
-        '24794074af31f8d7488b25d9264502f44c3cb9ff3db2412e83f6af959fd6a8b7b48153570bcedaaae74c80a17a01b4ba4d34e3cb3e344961a57195db5683ae38'
-        'SKIP'
-        'cdfa71c3e06a722276216b89a84f9e788f13afa0d27ef2f80cfc3f51b0f6fc847260b706f3492147a58f9bf7b40a9d836d3cad2bc5274f3bf0817b35134593f8')
+        '89eebc288e6b1ec983181a32f915a8501d5703803363a0c29a7a0ab8d1d619a269de4c27b63cd2de6b521daef88db27810ec42a8bfce7394585efb242ae0039b')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
@@ -95,6 +92,7 @@ prepare() {
 build() {
   cd $_srcname
   make LLVM=1 -j$_CORES all
+  make LLVM=1 -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
   make LLVM=1 htmldocs
 }
 
@@ -141,7 +139,7 @@ _package() {
 }
 
 _package-headers() {
-  pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
+    pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
 
   cd $_srcname
@@ -149,7 +147,7 @@ _package-headers() {
 
   echo "Installing build files..."
   install -Dt "$builddir" -m644 .config Makefile Module.symvers System.map \
-    localversion.* version vmlinux
+    localversion.* version vmlinux tools/bpf/bpftool/vmlinux.h
   install -Dt "$builddir/kernel" -m644 kernel/Makefile
   install -Dt "$builddir/arch/x86" -m644 arch/x86/Makefile
   cp -t "$builddir" -a scripts
