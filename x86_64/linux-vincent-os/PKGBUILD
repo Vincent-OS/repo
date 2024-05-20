@@ -1,13 +1,14 @@
 # Maintainer: v38armageddon <contact@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.8.2.origin
+pkgver=6.9.0.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
 arch=(x86_64)
-license=(GPL2)
+license=(GPL-2.0-only)
 makedepends=(
+  git
   bc
   cpio
   gettext
@@ -27,11 +28,13 @@ makedepends=(
   python-yaml
   texlive-latexextra
 )
-options=('!strip')
-_srcname=linux-${pkgver%.*}
-_srctag=v${pkgver%.*}-${pkgver##*.}
+options=(
+  !debug
+  !strip
+)
+_srcname=linux
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  ${_srcname}::git+https://github.com/Vincent-OS/linux.git
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -40,13 +43,10 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
   EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
 )
-# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('9ac322d85bcf98a04667d929f5c2666b15bd58c6c2d68dd512c72acbced07d04'
-            'SKIP'
-            'c6ed41fce0fceabee8a55178d76623f6f89e521279f3c81e1df6cdb1390091db')
-b2sums=('f057c2512040600fbf0df67cf9c7200aee0c06b82b3cf749be8c5685844d2662a585ce17685c7af880c0d9dbbbd81302e5a1fa41c3dbd39869123121a0e82dc2'
-        'SKIP'
-        '89eebc288e6b1ec983181a32f915a8501d5703803363a0c29a7a0ab8d1d619a269de4c27b63cd2de6b521daef88db27810ec42a8bfce7394585efb242ae0039b')
+
+# GitHub Repo and config file
+sha256sums=('SKIP'
+            'e3a9a019e3889c714ee80c5eec446f06c24bf3eac27fdd7b4f68d6660f901e16')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
@@ -57,7 +57,7 @@ prepare() {
   _CORES=$(cat /proc/cpuinfo|grep processor|wc -l)
   if [ $_CORES -lt 1 ]; then
 		_CORES=2
-	fi
+  fi
   
   cd $_srcname
 
@@ -66,14 +66,6 @@ prepare() {
   echo "${pkgbase#linux}" > localversion.20-pkgname
 
   local src
-  for src in "${source[@]}"; do
-    src="${src%%::*}"
-    src="${src##*/}"
-    src="${src%.zst}"
-    [[ $src = *.patch ]] || continue
-    echo "Applying patch $src..."
-    patch -Np1 < "../$src"
-  done
 
   echo "Setting config..."
   cp ../config .config
@@ -81,8 +73,8 @@ prepare() {
   diff -u ../config .config || :
 
   echo "Setting Rust..."
-  rustup install 1.74.1
-  rustup default 1.74.1
+  rustup install 1.78.0
+  rustup default 1.78.0
   rustup component add rust-src
   
   make LLVM=1 -s kernelrelease > version
@@ -139,7 +131,7 @@ _package() {
 }
 
 _package-headers() {
-    pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
+  pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
 
   cd $_srcname
@@ -250,5 +242,3 @@ for _p in "${pkgname[@]}"; do
     _package${_p#$pkgbase}
   }"
 done
-
-# vim:set ts=8 sts=2 sw=2 et:

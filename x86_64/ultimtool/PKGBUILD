@@ -1,44 +1,41 @@
 # Maintainer: v38armageddon <contact@v38armageddon.net>
 pkgname=ultimtool
-pkgver=VERSION
+pkgver=1.0
 pkgrel=1
-epoch=
-pkgdesc=""
-arch=()
-url=""
-license=('GPL')
+pkgdesc="Ultimate Tool for tooling with Vincent OS."
+arch=(x86_64)
+url="https://github.com/Vincent-OS/UltimTool"
+license=(GPL-3.0)
 groups=()
-depends=()
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
-noextract=()
-md5sums=()
-validpgpkeys=()
+depends=(
+	dotnet-runtime
+)
+makedepends=(
+	dotnet-sdk
+)
+provides=(
+	dotnet-runtime
+)
+source=(
+	${pkgname}::git+https://github.com/Vincent-OS/UltimTool.git
+)
+validpgpkeys=(
+	EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
+)
 
 prepare() {
 	cd "$pkgname-$pkgver"
-	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
 }
 
 build() {
 	cd "$pkgname-$pkgver"
-	./configure --prefix=/usr
-	make
-}
-
-check() {
-	cd "$pkgname-$pkgver"
-	make -k check
+	cd "src"
+	
+	echo "Restoring .NET projects..."
+	dotnet restore UltimTool.sln
+	
+	echo "Building UltimTool, this should take a while..."
+	dotnet build -c release UltimTool.sln
 }
 
 package() {
