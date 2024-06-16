@@ -1,7 +1,7 @@
 # Maintainer: v38armageddon <contact@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.9.0.origin
+pkgver=6.9.4.origin
 pkgrel=1
 pkgdesc='Linux Vincent OS'
 url='https://github.com/Vincent-OS/linux'
@@ -46,7 +46,7 @@ validpgpkeys=(
 
 # GitHub Repo and config file
 sha256sums=('SKIP'
-            'e3a9a019e3889c714ee80c5eec446f06c24bf3eac27fdd7b4f68d6660f901e16')
+            '621bcd0c8fc26df94834488574c4563e2270b28e53e3c4bdaab458532b9a1e67')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
