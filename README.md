@@ -3,7 +3,7 @@ This is the official Vincent OS Repo, it contains the essentials packages.
 
 ## Layout
 There is three branches for this repo:
-- master: Contains only this repo and essentials build for Azure Static Web.
+- master: Contains only this repo.
 - vincent-os: Contains packages for the Vincent OS version based on arch.
 - vincent-os-legacy: Contains packages for the Vincent OS Legacy version based on debian.
 
