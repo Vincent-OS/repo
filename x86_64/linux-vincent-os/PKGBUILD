@@ -1,9 +1,9 @@
-# Maintainer: v38armageddon <contact@v38armageddon.net>
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.9.4.origin
+pkgver=6.10.10.origin
 pkgrel=1
-pkgdesc='Linux Vincent OS'
+pkgdesc='Vincent OS Kernel'
 url='https://github.com/Vincent-OS/linux'
 arch=(x86_64)
 license=(GPL-2.0-only)
@@ -40,13 +40,12 @@ source=(
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
-  83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
-  EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
+  3BC8560845F09927972D4DBA825903D4BF9F9FC7  # Florian. M
 )
 
 # GitHub Repo and config file
 sha256sums=('SKIP'
-            '621bcd0c8fc26df94834488574c4563e2270b28e53e3c4bdaab458532b9a1e67')
+            'afaaee12a6c44eecfe7239eaecc8d6544df71e7d68a62ff2baae0800a55a4a77')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
@@ -89,7 +88,7 @@ build() {
 }
 
 _package() {
-  pkgdesc="Kernel for $pkgdesc distro"
+  pkgdesc="$pkgdesc"
   depends=(
     coreutils
     initramfs
@@ -131,7 +130,7 @@ _package() {
 }
 
 _package-headers() {
-  pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
+  pkgdesc="Headers and scripts for building modules for the $pkgdesc"
   depends=(pahole)
 
   cd $_srcname
@@ -213,7 +212,7 @@ _package-headers() {
 }
 
 _package-docs() {
-  pkgdesc="Documentation for the $pkgdesc kernel"
+  pkgdesc="Documentation for the $pkgdesc"
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"

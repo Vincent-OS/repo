@@ -1,4 +1,4 @@
-# Maintainer: v38armageddon <contact@v38armageddon.net>
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
 pkgname=ultimtool
 pkgver=1.0
 pkgrel=1
@@ -20,7 +20,7 @@ source=(
 	${pkgname}::git+https://github.com/Vincent-OS/UltimTool.git
 )
 validpgpkeys=(
-	EE4462B7092CDF3616CDA56D03BC98E28803CA52  # v38armageddon
+	3BC8560845F09927972D4DBA825903D4BF9F9FC7  # Florian. M
 )
 
 prepare() {
