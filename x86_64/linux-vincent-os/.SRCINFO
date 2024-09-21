@@ -1,6 +1,6 @@
 pkgbase = linux-vincent-os
 	pkgdesc = Vincent OS Kernel
-	pkgver = 6.10.10.origin
+	pkgver = 6.11.origin
 	pkgrel = 1
 	url = https://github.com/Vincent-OS/linux
 	arch = x86_64
@@ -30,7 +30,7 @@ pkgbase = linux-vincent-os
 	validpgpkeys = 647F28654894E3BD457199BE38DBBDC86092693E
 	validpgpkeys = 3BC8560845F09927972D4DBA825903D4BF9F9FC7
 	sha256sums = SKIP
-	sha256sums = afaaee12a6c44eecfe7239eaecc8d6544df71e7d68a62ff2baae0800a55a4a77
+	sha256sums = f1dd140dc6a856864a69602ff7f046e541663ace760a32134977beed9bf2250d
 
 pkgname = linux-vincent-os
 	pkgdesc = Vincent OS Kernel

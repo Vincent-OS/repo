@@ -1,7 +1,7 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.10.10.origin
+pkgver=6.11.origin
 pkgrel=1
 pkgdesc='Vincent OS Kernel'
 url='https://github.com/Vincent-OS/linux'
@@ -20,7 +20,7 @@ makedepends=(
   xz
   llvm
   rustup
-  
+
   # htmldocs
   graphviz
   imagemagick
@@ -45,7 +45,7 @@ validpgpkeys=(
 
 # GitHub Repo and config file
 sha256sums=('SKIP'
-            'afaaee12a6c44eecfe7239eaecc8d6544df71e7d68a62ff2baae0800a55a4a77')
+            'f1dd140dc6a856864a69602ff7f046e541663ace760a32134977beed9bf2250d')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
@@ -78,11 +78,26 @@ prepare() {
   
   make LLVM=1 -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
+
+  # KLP version
+  local rel_version=$(echo $pkgrel)
+  local minor_version=$(echo $pkgver | cut -d '.' -f 2)
+  local date_suffix=$(date +%y%m%d)
+
+  # Name of the KLP patch (e.g. KLP210240914.patch)
+  local patch_name="KLP${rel_version}${minor_version}${date_suffix}.patch"
+
+  # Generate KLP patch
+  echo "Generating KLP patch..."
+  git diff HEAD~1 HEAD > ../${patch_name}
+  echo "Generated KLP patch: ${patch_name}"
 }
 
 build() {
   cd $_srcname
   make LLVM=1 -j$_CORES all
+
+  # Generate BPF headers and docs
   make LLVM=1 -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
   make LLVM=1 htmldocs
 }
