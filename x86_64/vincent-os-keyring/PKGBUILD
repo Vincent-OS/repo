@@ -1,0 +1,15 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+
+pkgname=vincent-os-keyring
+pkgver=20240920
+pkgrel=1
+pkgdesc="Vincent OS Keyring for the signature of the repository"
+arch=(any)
+url="https://github.com/Vincent-OS/repo"
+license=('EUPL')
+source=("vincent-os.gpg")
+sha256sums=('1c1c752a4e896d398389beb1d1329aed9181e645431ec2866d2e5e988dbb21df')
+
+package() {
+	install -Dm644 "$srcdir/vincent-os.gpg" "$pkgdir/usr/share/pacman/keyrings/vincent-os.gpg"
+}

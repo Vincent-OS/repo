@@ -1,0 +1,32 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+
+pkgname=wallpapers-app
+pkgver=1.0
+pkgrel=1
+pkgdesc="Sets of Vincent OS App wallpapers for Vincent OS and Vincent OS Legacy"
+arch=(any)
+url="https://github.com/Vincent-OS/wallpapers-app"
+license=('GPL')
+source=("")
+validpgpkeys=()
+
+prepare() {
+	cd "$pkgname-$pkgver"
+	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	./configure --prefix=/usr
+	make
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+	make -k check
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}
