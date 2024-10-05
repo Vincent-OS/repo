@@ -1,8 +1,8 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.11.origin
-pkgrel=1
+pkgver=6.11.1.origin
+pkgrel=2
 pkgdesc='Vincent OS Kernel'
 url='https://github.com/Vincent-OS/linux'
 arch=(x86_64)
@@ -45,7 +45,7 @@ validpgpkeys=(
 
 # GitHub Repo and config file
 sha256sums=('SKIP'
-            'f1dd140dc6a856864a69602ff7f046e541663ace760a32134977beed9bf2250d')
+            '174db30c50ab53b8ec2f55542666ae09744a4b30cd5692c6e6f3386383b76276')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
