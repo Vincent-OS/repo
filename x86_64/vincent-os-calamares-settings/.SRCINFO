@@ -1,0 +1,15 @@
+pkgbase = vincent-os-calamares-settings
+	pkgdesc = Calamares configuration files for Vincent OS
+	pkgver = 1.0
+	pkgrel = 1
+	url = https://github.com/Vincent-OS/calamares-settings
+	arch = any
+	makedepends = git
+	depends = vincent-os-calamares
+	provides = vincent-os-calamares-settings
+	options = !strip
+	options = !emptydirs
+	source = git+https://github.com/Vincent-OS/calamares-settings
+	sha256sums = SKIP
+
+pkgname = vincent-os-calamares-settings

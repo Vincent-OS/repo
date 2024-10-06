@@ -1,0 +1,36 @@
+pkgbase = vincent-os-calamares
+	pkgdesc = Distribution-independent installer framework
+	pkgver = 3.3.9
+	pkgrel = 1
+	url = https://github.com/calamares/calamares
+	arch = x86_64
+	license = GPL-3.0-or-later
+	makedepends = boost
+	makedepends = extra-cmake-modules
+	makedepends = git
+	makedepends = ninja
+	makedepends = qt6-tools
+	makedepends = qt6-translations
+	depends = boost-libs
+	depends = ckbcomp
+	depends = hwinfo
+	depends = kconfig
+	depends = kcoreaddons
+	depends = ki18n
+	depends = kiconthemes
+	depends = kpmcore
+	depends = libpwquality
+	depends = polkit-qt6
+	depends = python
+	depends = python-jsonschema
+	depends = python-yaml
+	depends = qt6-svg
+	depends = solid
+	depends = squashfs-tools
+	depends = yaml-cpp
+	provides = calamares=3.3.9
+	conflicts = calamares
+	source = calamares::git+https://github.com/calamares/calamares.git
+	sha256sums = SKIP
+
+pkgname = vincent-os-calamares

@@ -1,0 +1,81 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+# This PKGBUILD originaly comes from https://aur.archlinux.org/packages/calamares-git
+# And adapted for the latest version of Calamares.
+_pkgname="calamares"
+pkgname="vincent-os-${_pkgname}"
+pkgver=3.3.9
+pkgrel=1
+pkgdesc="Distribution-independent installer framework"
+url="https://github.com/calamares/calamares"
+license=("GPL-3.0-or-later")
+arch=('x86_64')
+depends=(
+  'boost-libs'
+  'ckbcomp'
+  'hwinfo'
+  'kconfig'
+  'kcoreaddons'
+  'ki18n'
+  'kiconthemes'
+  'kpmcore'
+  'libpwquality'
+  'polkit-qt6'
+  'python'
+  'python-jsonschema'
+  'python-yaml'
+  'qt6-svg'
+  'solid'
+  'squashfs-tools'
+  'yaml-cpp'
+)
+makedepends=(
+  'boost'
+  'extra-cmake-modules'
+  'git'
+  'ninja'
+  'qt6-tools'
+  'qt6-translations'
+)
+provides=("$_pkgname=${pkgver%%.r*}")
+conflicts=("$_pkgname")
+_pkgsrc="$_pkgname"
+source=(
+  "$_pkgsrc"::"git+$url.git"
+)
+sha256sums=(
+  'SKIP'
+)
+
+prepare() {
+  cd "$_pkgsrc"
+}
+
+
+build() {
+  local _skip_modules=(
+    # Here we remove all dummies, not for a production use!
+    dummycpp
+    dummyprocess
+    dummypython
+    dummypythonqt
+  )
+
+  local _cmake_options=(
+    -B build
+    -S "$_pkgsrc"
+    -G Ninja
+
+    -DCMAKE_BUILD_TYPE=Release
+    -DWITH_QT6=ON
+    -DSKIP_MODULES="${_skip_modules[*]}"
+    -DBUILD_TESTING=OFF
+    -Wno-dev
+  )
+
+  cmake "${_cmake_options[@]}"
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
