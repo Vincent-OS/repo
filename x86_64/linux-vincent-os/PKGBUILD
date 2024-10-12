@@ -1,8 +1,8 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 
 pkgbase=linux-vincent-os
-pkgver=6.11.1.origin
-pkgrel=2
+pkgver=6.11.3.origin
+pkgrel=1
 pkgdesc='Vincent OS Kernel'
 url='https://github.com/Vincent-OS/linux'
 arch=(x86_64)
@@ -20,6 +20,7 @@ makedepends=(
   xz
   llvm
   rustup
+  kpatch
 
   # htmldocs
   graphviz
@@ -45,7 +46,7 @@ validpgpkeys=(
 
 # GitHub Repo and config file
 sha256sums=('SKIP'
-            '174db30c50ab53b8ec2f55542666ae09744a4b30cd5692c6e6f3386383b76276')
+            'cfeaf414f5f374855258e3fa44e7007e4d6d6e4dde081667dd53f4ff33fd01d4')
 
 export KBUILD_BUILD_HOST=vincentOS
 export KBUILD_BUILD_USER=$pkgbase
@@ -91,6 +92,10 @@ prepare() {
   echo "Generating KLP patch..."
   git diff HEAD~1 HEAD > ../${patch_name}
   echo "Generated KLP patch: ${patch_name}"
+
+  # Unload all previous KLP patches
+  echo "Unloading all installed KLP patches..."
+  kpatch unload --all
 }
 
 build() {
