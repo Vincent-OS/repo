@@ -1,0 +1,10 @@
+pkgbase = wallpapers-app
+	pkgdesc = Sets of Vincent OS App wallpapers for Vincent OS and Vincent OS Legacy
+	pkgver = 1.0
+	pkgrel = 1
+	url = https://github.com/Vincent-OS/wallpapers-app
+	arch = any
+	license = EUPLGPL
+	source = https://github.com/Vincent-OS/wallpapers-app/releases/download/v1.0/vincent-os-app-wallpapers.tar.xz
+
+pkgname = wallpapers-app
