@@ -1,0 +1,11 @@
+NAME="Vincent OS"
+PRETTY_NAME="Vincent OS 1.0 (Origin)"
+ID=vincentos
+BUILD_ID=origin
+ANSI_COLOR="38;2;92;186;71"
+HOME_URL="https://vincent-os.v38armageddon.net/"
+DOCUMENTATION_URL="https://docs.v38armageddon.net/vincent-os/presentation"
+SUPPORT_URL="https://vincent-os.v38armageddon.net/pages/support"
+BUG_REPORT_URL="https://github.com/Vincent-OS/issues/issues"
+PRIVACY_POLICY_URL="https://www.v38armageddon.net/"
+LOGO=vincentos-logo
