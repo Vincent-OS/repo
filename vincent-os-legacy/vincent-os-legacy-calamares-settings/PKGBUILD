@@ -1,5 +1,5 @@
 # Maintainer:  Florian. M <florian.m@v38armageddon.net>
-pkgname=vincent-os-calamares-settings
+pkgname=vincent-os-legacy-calamares-settings
 _destfolder="/etc"
 pkgver=2.0
 pkgrel=1
@@ -17,6 +17,11 @@ provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("git+$url")
 sha256sums=('SKIP')
+
+prepare() {
+  # Change the branch to the 'legacy' one
+  git checkout legacy
+}
 
 package() {
   install -dm755 ${pkgdir} ${_destfolder}
