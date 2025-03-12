@@ -3,7 +3,7 @@
 # And adapted for the latest version of Calamares.
 _pkgname="calamares"
 pkgname="vincent-os-${_pkgname}"
-pkgver=3.3.13
+pkgver=3.3.14
 pkgrel=1
 pkgdesc="Distribution-independent installer framework"
 url="https://github.com/calamares/calamares"
