@@ -15,13 +15,8 @@ depends=(
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=("git+$url")
+source=("git+$url#branch=legacy")
 sha256sums=('SKIP')
-
-prepare() {
-  # Change the branch to the 'legacy' one
-  git checkout legacy
-}
 
 package() {
   install -dm755 ${pkgdir} ${_destfolder}
