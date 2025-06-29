@@ -1,11 +1,11 @@
 pkgbase = space-kde-sddm
 	pkgdesc = Space SDDM theme for KDE
 	pkgver = 1.0
-	pkgrel = 1
+	pkgrel = 3
 	url = https://github.com/Vincent-OS/Space-kde
 	arch = any
 	license = LGPL-v2.1
 	source = https://github.com/Vincent-OS/Space-kde/releases/download/v1.0/Space.zip
-	sha256sums = SKIP
+	sha256sums = 0fdb21dbbb7a5ad2cac7ff0349972e3c33248dddaa35528386ad1f07576c0ddc
 
 pkgname = space-kde-sddm

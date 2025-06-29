@@ -1,7 +1,7 @@
 pkgbase = vincent-os-calamares-settings
 	pkgdesc = Calamares configuration files for Vincent OS
-	pkgver = 2.0
-	pkgrel = 1
+	pkgver = 3.0
+	pkgrel = 3
 	url = https://github.com/Vincent-OS/calamares-settings
 	arch = any
 	makedepends = git
