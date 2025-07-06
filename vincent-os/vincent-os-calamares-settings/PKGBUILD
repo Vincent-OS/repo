@@ -1,8 +1,8 @@
 # Maintainer:  Florian. M <florian.m@v38armageddon.net>
 pkgname=vincent-os-calamares-settings
 _destfolder="/etc"
-pkgver=3.0
-pkgrel=3
+pkgver=4.0
+pkgrel=1
 pkgdesc="Calamares configuration files for Vincent OS"
 arch=(any)
 url="https://github.com/Vincent-OS/calamares-settings"
