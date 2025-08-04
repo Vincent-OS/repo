@@ -1,12 +1,13 @@
 pkgbase = clpctl
 	pkgdesc = CLI Interface for Core LivePatch
 	pkgver = 1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/Vincent-OS/clpctl
 	arch = x86_64
 	license = MS-PL
 	depends = dotnet-runtime-8.0
 	depends = powershell-bin
+	options = !strip
 	source = https://github.com/Vincent-OS/clpctl/releases/download/v1.0/clpctl
 	sha256sums = 36be7300c436df7549657da9bcc6529896f40b9515117baff768aa6d6d7ca966
 

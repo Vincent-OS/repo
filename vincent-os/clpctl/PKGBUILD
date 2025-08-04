@@ -1,7 +1,7 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 pkgname="clpctl"
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="CLI Interface for Core LivePatch"
 url="https://github.com/Vincent-OS/clpctl"
 license=("MS-PL")
@@ -16,6 +16,7 @@ source=(
 sha256sums=(
     "36be7300c436df7549657da9bcc6529896f40b9515117baff768aa6d6d7ca966"
 )
+options=(!strip)
 
 package() {
     mkdir -p "$pkgdir/etc/CLP"
