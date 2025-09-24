@@ -1,0 +1,13 @@
+pkgbase = scripts
+	pkgdesc = Collection of scripts for Vincent OS
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/Vincent-OS/scripts
+	arch = x86_64
+	license = EUPL-1.2
+	makedepends = git
+	options = !strip
+	source = git+https://github.com/Vincent-OS/scripts
+	sha256sums = SKIP
+
+pkgname = scripts

@@ -1,0 +1,3 @@
+[submodule "vincent-os/vincent-os/rtl8821ce-dkms-git"]
+	path = vincent-os/vincent-os/rtl8821ce-dkms-git
+	url = https://aur.archlinux.org/ckbcomp.git

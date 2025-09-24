@@ -1,0 +1,21 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+pkgname="scripts"
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Collection of scripts for Vincent OS"
+url="https://github.com/Vincent-OS/scripts"
+license=("EUPL-1.2")
+arch=('x86_64')
+makedepends=(
+    'git'
+)
+source=("git+$url")
+options=(!strip)
+sha256sums=('SKIP')
+
+package() {
+    mkdir -p "$pkgdir/src/System/Scripts/PowerShell"
+    mkdir -p "$pkgdir/etc/systemd/system"
+    install -Dm755 "$srcdir/scripts/src/PowerShell/"* "$pkgdir/src/System/Scripts/PowerShell/"
+    install -Dm644 "$srcdir/scripts/src/systemd/"* "$pkgdir/etc/systemd/system/"
+}

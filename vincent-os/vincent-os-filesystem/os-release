@@ -1,11 +1,10 @@
 NAME="Vincent OS"
-PRETTY_NAME="Vincent OS 1.0 (Origin)"
+PRETTY_NAME="Vincent OS 1.0 (origin)"
 ID=vincentos
-ID_LIKE=arch
 BUILD_ID=origin
 VARIANT="Standard Edition"
 VARIANT_ID=standard
-VERSION="1.0 (Origin)"
+VERSION="1.0 (origin)"
 VERSION_ID=1.0
 VERSION_CODENAME=origin
 ANSI_COLOR="38;2;92;186;71"
