@@ -9,11 +9,11 @@ In case of troubleshooting, here's how to readd the repos:
 2. After the repo: ``[multilib]`` add this:
 - For the Standard Edition
 ```
-[origin]
-Include = /etc/pacman.d/vincent-os-mirrorlist
-
 [vincent-os]
 Include = /etc/pacman.d/vincent-os-mirrorlist
+
+[origin]
+Include = /etc/pacman.d/codename-mirrorlist
 ```
 3. Save it and run as root: ``pacman -Syu``.
 
