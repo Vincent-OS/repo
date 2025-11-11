@@ -9,16 +9,24 @@ arch=('x86_64')
 depends=(
     'dotnet-runtime-8.0'
     'powershell-bin'
-    'scripts'
 )
 source=(
     "https://github.com/Vincent-OS/clpctl/releases/download/v2.0/clpctl"
+    "core-livepatch-update.service"
+    "core-livepatch-update.timer"
+    "90-core-livepatch.hook"
 )
-sha256sums=('49c70dad700eb0775b594b70182ba3730639a3b9f4b00adefe2c6af98e393f27')
+sha256sums=('43ddf84579048f60e4ab694a1875623e33f49cb07d62efff0219b2d666f208d3'
+            '4230e878293b3c3dfaf86bb3df4c8b9b9cbc52d520b6348778393a11fb14b491'
+            'bd8ab086d42d43dcd996ac4f3997e7fc46130317d36ed055394a396dc65c0868'
+            '268fc7c95e72045f9f7db3c1f364869d926ad2e312b1d5f09ddd995ff3468aec')
 options=(!strip)
 
 package() {
     mkdir -p "$pkgdir/etc/CLP"
     mkdir -p "$pkgdir/opt/CLP"
     install -Dm755 "clpctl" "$pkgdir/usr/bin/clpctl"
+    install -Dm644 "core-livepatch-update.service" "$pkgdir/usr/lib/systemd/system/core-livepatch-update.service"
+    install -Dm644 "core-livepatch-update.timer" "$pkgdir/usr/lib/systemd/system/core-livepatch-update.timer"
+    install -Dm644 "90-core-livepatch.hook" "$pkgdir/usr/share/libalpm/hooks/90-core-livepatch.hook"
 }

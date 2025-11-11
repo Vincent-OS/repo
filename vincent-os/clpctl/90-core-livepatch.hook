@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = clpctl
+
+[Action]
+Description = Enabling Core LivePatch systemd timer...
+When = PostTransaction
+Exec = /usr/bin/systemctl enable core-livepatch-update.timer

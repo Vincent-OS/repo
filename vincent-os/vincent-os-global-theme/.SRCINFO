@@ -1,10 +1,12 @@
 pkgbase = vincent-os-global-theme
 	pkgdesc = Global theme for Vincent OS
 	pkgver = 1.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/Vincent-OS/global-theme
 	arch = any
 	license = EUPL
+	depends = plasma-desktop
+	depends = wallpapers
 	source = https://github.com/Vincent-OS/global-theme/releases/download/v1.0/Vincent.OS.tar.xz
 	sha256sums = d74aa6f0fb7b3db899094490e75f5322e62372121e57dccd94f9da6b805f8d53
 

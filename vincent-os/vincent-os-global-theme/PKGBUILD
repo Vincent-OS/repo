@@ -1,7 +1,7 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 pkgname=vincent-os-global-theme
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Global theme for Vincent OS"
 arch=(any)
 url="https://github.com/Vincent-OS/global-theme"
@@ -14,6 +14,6 @@ depends=(
 sha256sums=('d74aa6f0fb7b3db899094490e75f5322e62372121e57dccd94f9da6b805f8d53')
 
 package() {
-    mkdir -p "$pkgdir/usr/share/plasma/look-and-feel"
-	install -Dm755 "$srcdir/src/"* "$pkgdir/usr/share/plasma/look-and-feel/"
+    mkdir -p "$pkgdir/usr/share/plasma/look-and-feel/"
+    cp -r "$srcdir/"* "$pkgdir/usr/share/plasma/look-and-feel/"
 }
