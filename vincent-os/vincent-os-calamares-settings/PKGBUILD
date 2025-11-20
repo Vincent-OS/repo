@@ -2,7 +2,7 @@
 pkgname=vincent-os-calamares-settings
 _destfolder="/etc"
 pkgver=4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Calamares configuration files for Vincent OS"
 arch=(any)
 url="https://github.com/Vincent-OS/calamares-settings"
