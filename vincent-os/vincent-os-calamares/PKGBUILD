@@ -4,7 +4,7 @@
 _pkgname="calamares"
 pkgname="vincent-os-${_pkgname}"
 pkgver=3.3.14
-pkgrel=3
+pkgrel=4
 pkgdesc="Distribution-independent installer framework"
 url="https://codeberg.org/calamares/calamares"
 license=("GPL-3.0-or-later")
@@ -40,7 +40,7 @@ provides=("$_pkgname=${pkgver%%.r*}")
 conflicts=("$_pkgname")
 _pkgsrc="$_pkgname"
 source=(
-  "$_pkgsrc"::"git+$url.git"
+  "$_pkgsrc"::"https://codeberg.org/Calamares/calamares/archive/v$pkgver.tar.gz"
 )
 sha256sums=('SKIP')
 

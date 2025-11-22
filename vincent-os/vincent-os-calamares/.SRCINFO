@@ -1,7 +1,7 @@
 pkgbase = vincent-os-calamares
 	pkgdesc = Distribution-independent installer framework
 	pkgver = 3.3.14
-	pkgrel = 3
+	pkgrel = 4
 	url = https://codeberg.org/calamares/calamares
 	arch = x86_64
 	license = GPL-3.0-or-later
@@ -30,7 +30,7 @@ pkgbase = vincent-os-calamares
 	depends = yaml-cpp
 	provides = calamares=3.3.14
 	conflicts = calamares
-	source = calamares::git+https://codeberg.org/calamares/calamares.git
+	source = calamares::https://codeberg.org/Calamares/calamares/archive/v3.3.14.tar.gz
 	sha256sums = SKIP
 
 pkgname = vincent-os-calamares
