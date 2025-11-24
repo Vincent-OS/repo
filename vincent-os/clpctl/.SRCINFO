@@ -1,7 +1,7 @@
 pkgbase = clpctl
 	pkgdesc = CLI Interface for Core LivePatch
 	pkgver = 2.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/Vincent-OS/clpctl
 	arch = x86_64
 	license = MS-PL
@@ -13,8 +13,8 @@ pkgbase = clpctl
 	source = core-livepatch-update.timer
 	source = 90-core-livepatch.hook
 	sha256sums = 43ddf84579048f60e4ab694a1875623e33f49cb07d62efff0219b2d666f208d3
-	sha256sums = 4230e878293b3c3dfaf86bb3df4c8b9b9cbc52d520b6348778393a11fb14b491
-	sha256sums = bd8ab086d42d43dcd996ac4f3997e7fc46130317d36ed055394a396dc65c0868
+	sha256sums = cb5ec6b46074d692bf2c3600aadf0984ef4964841d29ef35f2d7d973c406c3e9
+	sha256sums = 96f53c5c9b4b61b8241f6b5f1fdf8c137db46bfa8a68c3e74319e9515cf2e9a8
 	sha256sums = 268fc7c95e72045f9f7db3c1f364869d926ad2e312b1d5f09ddd995ff3468aec
 
 pkgname = clpctl

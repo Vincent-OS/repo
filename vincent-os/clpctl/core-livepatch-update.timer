@@ -2,7 +2,7 @@
 Description=Core LivePatch Update Scheduler
 
 [Timer]
-OnCalendar=*-*-*12:00:00
+OnCalendar=*-*-* 12:00:00
 Persistent=true
 
 [Install]

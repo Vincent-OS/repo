@@ -1,7 +1,7 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 pkgname="clpctl"
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="CLI Interface for Core LivePatch"
 url="https://github.com/Vincent-OS/clpctl"
 license=("MS-PL")
@@ -17,8 +17,8 @@ source=(
     "90-core-livepatch.hook"
 )
 sha256sums=('43ddf84579048f60e4ab694a1875623e33f49cb07d62efff0219b2d666f208d3'
-            '4230e878293b3c3dfaf86bb3df4c8b9b9cbc52d520b6348778393a11fb14b491'
-            'bd8ab086d42d43dcd996ac4f3997e7fc46130317d36ed055394a396dc65c0868'
+            'cb5ec6b46074d692bf2c3600aadf0984ef4964841d29ef35f2d7d973c406c3e9'
+            '96f53c5c9b4b61b8241f6b5f1fdf8c137db46bfa8a68c3e74319e9515cf2e9a8'
             '268fc7c95e72045f9f7db3c1f364869d926ad2e312b1d5f09ddd995ff3468aec')
 options=(!strip)
 
