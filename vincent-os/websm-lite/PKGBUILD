@@ -1,0 +1,36 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+pkgname="websm-lite"
+pkgver=6.0.0
+_pkgver=6.0
+pkgrel=3
+pkgdesc="A Lightweight Edition for Low-End Devices from WebSM."
+url="https://github.com/v38armageddon/WebSM"
+license=("EUPL-1.2")
+arch=('x86_64')
+depends=(
+	'dotnet-runtime'
+	'webkit2gtk'
+	'webkit2gtk-4.1'
+)
+source=(
+	"$url/releases/download/v$_pkgver/WebSM.Lite-linux-standalone.tar.xz"
+	"net.v38armageddon.WebSM.Lite.desktop"
+)
+sha256sums=('e1a630f2a845408330bf96bd3a8d7cf6bf60da2d01eda62ec4eb8060fb09a608'
+            '35135cb1977cdf2a7cc041683631e101b731ca5ec7a3d7e9114d2f5c531776db')
+options=(!strip)
+_srcdir="usr/lib/WebSM.Lite"
+
+package() {
+	mkdir -p "$pkgdir/usr/lib/WebSM.Lite" "$pkgdir/usr/share/icons/hicolor/{44x44,64x64,72x72,150x150,310x310,512x512}/apps" "$pkgdir/usr/bin" "$pkgdir/usr/share/applications"
+	cp -a "$pkgsrc"* "$pkgdir/$_srcdir"
+	install -Dm644 "net.v38armageddon.WebSM.Lite.desktop" "$pkgdir/usr/share/applications/net.v38armageddon.WebSM.Lite.desktop"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/Square44x44Logo.scale-100.png "$pkgdir/usr/share/icons/hicolor/44x44/apps/net.v38armageddon.WebSM.Lite.png"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/StoreLogo.scale-125.png "$pkgdir/usr/share/icons/hicolor/64x64/apps/net.v38armageddon.WebSM.Lite.png"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/SmallTile.scale-125.png "$pkgdir/usr/share/icons/hicolor/72x72/apps/net.v38armageddon.WebSM.Lite.png"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/Square150x150Logo.scale-100.png "$pkgdir/usr/share/icons/hicolor/150x150/net.v38armageddon.WebSM.Lite.png"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/LargeTile.scale-100.png "$pkgdir/usr/share/icons/hicolor/310x310/apps/net.v38armageddon.WebSM.Lite.png"
+	install -Dm644 $pkgdir/$_srcdir/Assets/Icons/icon_foreground.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/net.v38armageddon.WebSM.Lite.png"
+	chmod +x "$pkgdir/$_srcdir/WebSM.Lite"
+	ln -s "/usr/lib/WebSM.Lite/WebSM.Lite" "$pkgdir/usr/bin/WebSM.Lite"
+}

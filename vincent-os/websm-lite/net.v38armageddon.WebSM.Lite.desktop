@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=WebSM Lite
+Exec=GDK_BACKEND=x11 WebSM.Lite
+Icon=net.v38armageddon.WebSM.Lite
+Terminal=false
+Categories=Network
+Comment=A Lightweight Edition for Low-End Devices from WebSM.

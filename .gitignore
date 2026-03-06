@@ -1,5 +1,5 @@
 # Ignore all generated files
-vincent-os/x86_64/*/src
+src/
 *.tar.*
-vincent-os/x86_64/*/pkg
+pkg/
 *.deb

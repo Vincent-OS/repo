@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=WebSM
+Exec=GDK_BACKEND=x11 WebSM
+Icon=net.v38armageddon.WebSM
+Terminal=false
+Categories=Network
+Comment=A simple minimalist web browser based on Uno Platform.

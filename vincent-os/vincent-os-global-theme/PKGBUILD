@@ -1,17 +1,17 @@
 # Maintainer: Florian. M <florian.m@v38armageddon.net>
 pkgname=vincent-os-global-theme
-pkgver=1.0
+pkgver=1.1
 pkgrel=2
 pkgdesc="Global theme for Vincent OS"
 arch=(any)
 url="https://github.com/Vincent-OS/global-theme"
 license=('EUPL')
-source=("https://github.com/Vincent-OS/global-theme/releases/download/v1.0/Vincent.OS.tar.xz")
+source=("https://github.com/Vincent-OS/global-theme/releases/download/v1.1/Vincent-OS.tar.xz")
 depends=(
     'plasma-desktop'
     'wallpapers'
 )
-sha256sums=('d74aa6f0fb7b3db899094490e75f5322e62372121e57dccd94f9da6b805f8d53')
+sha256sums=('8e1af69c4596d7088568758c775f75c5e0c35e89ffee16130d5bafd1c0110cb8')
 
 package() {
     mkdir -p "$pkgdir/usr/share/plasma/look-and-feel/"

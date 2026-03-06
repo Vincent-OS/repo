@@ -1,0 +1,17 @@
+pkgbase = websm
+	pkgdesc = A simple minimalist web browser on Uno Platform.
+	pkgver = 6.0.0
+	pkgrel = 3
+	url = https://github.com/v38armageddon/WebSM
+	arch = x86_64
+	license = EUPL-1.2
+	depends = dotnet-runtime
+	depends = webkit2gtk
+	depends = webkit2gtk-4.1
+	options = !strip
+	source = https://github.com/v38armageddon/WebSM/releases/download/v6.0/WebSM-linux-standalone.tar.xz
+	source = net.v38armageddon.WebSM.desktop
+	sha256sums = f54e073180191e7de8b201378d50901084ed38653c3e06a877f97919ac61e721
+	sha256sums = 1c174b6451b0b81b293fffce50c9cc38b8ace304b27442053b5c96920a074549
+
+pkgname = websm
