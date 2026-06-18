@@ -1,0 +1,13 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+pkgname=vincent-os-skel
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Vincent OS skeleton package"
+arch=('any')
+license=('EUPL-1.2')
+url='https://vincent-os.v38armageddon.net'
+depends=('vincent-os-filesystem')
+
+package () {
+	install -Dm644 "${srcdir}/skel/" "${pkgdir}/etc/skel/"
+}

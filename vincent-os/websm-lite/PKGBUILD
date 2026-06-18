@@ -2,14 +2,13 @@
 pkgname="websm-lite"
 pkgver=6.0.0
 _pkgver=6.0
-pkgrel=3
+pkgrel=4
 pkgdesc="A Lightweight Edition for Low-End Devices from WebSM."
 url="https://github.com/v38armageddon/WebSM"
 license=("EUPL-1.2")
 arch=('x86_64')
 depends=(
 	'dotnet-runtime'
-	'webkit2gtk'
 	'webkit2gtk-4.1'
 )
 source=(

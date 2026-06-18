@@ -1,12 +1,11 @@
 pkgbase = websm-lite
 	pkgdesc = A Lightweight Edition for Low-End Devices from WebSM.
 	pkgver = 6.0.0
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/v38armageddon/WebSM
 	arch = x86_64
 	license = EUPL-1.2
 	depends = dotnet-runtime
-	depends = webkit2gtk
 	depends = webkit2gtk-4.1
 	options = !strip
 	source = https://github.com/v38armageddon/WebSM/releases/download/v6.0/WebSM.Lite-linux-standalone.tar.xz

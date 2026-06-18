@@ -1,0 +1,10 @@
+pkgbase = vincent-os-skel
+	pkgdesc = Vincent OS skeleton package
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://vincent-os.v38armageddon.net
+	arch = any
+	license = EUPL-1.2
+	depends = vincent-os-filesystem
+
+pkgname = vincent-os-skel

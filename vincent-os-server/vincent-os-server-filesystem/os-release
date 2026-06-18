@@ -1,5 +1,5 @@
 NAME="Vincent OS Server"
-PRETTY_NAME="Vincent OS 2026 (cyclades)"
+PRETTY_NAME="Vincent OS Server 2026 (cyclades)"
 ID=vincentos
 BUILD_ID=cyclades
 VARIANT="Server Edition"
