@@ -1,10 +1,12 @@
 pkgbase = vincent-os-skel
 	pkgdesc = Vincent OS skeleton package
 	pkgver = 1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://vincent-os.v38armageddon.net
 	arch = any
 	license = EUPL-1.2
 	depends = vincent-os-filesystem
+	source = skel.tar.xz
+	sha256sums = d06f2567398df5047aa5a57ecbbc90c63347743042ba1e4cb1c0e4ebb6e224e6
 
 pkgname = vincent-os-skel
