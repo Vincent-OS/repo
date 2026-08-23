@@ -1,0 +1,17 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+pkgname=vincent-os-server-skel
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Vincent OS skeleton package"
+arch=('any')
+license=('EUPL-1.2')
+url='https://vincent-os.v38armageddon.net'
+depends=('vincent-os-filesystem')
+source=("skel.tar.xz") # HACK: Make local archive for fuck knows why. THIS ACTION MUST BE MADE MANUALLY
+sha256sums=('22919d78d374b5b6d5c647d43648c4b78c8390e9ca6600fd73c591b4c5c5d85d')
+
+package () {
+	mkdir -p "${pkgdir}/etc/skel/" "${srcdir}/skel/"
+	tar -xf "${srcdir}/skel.tar.xz" -C "${srcdir}/skel/"
+	cp -a "${srcdir}/skel/"* "${pkgdir}/etc/"
+}
