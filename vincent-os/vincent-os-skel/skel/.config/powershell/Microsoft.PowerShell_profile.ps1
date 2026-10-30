@@ -1,8 +1,8 @@
 ## Import aliases from .bashrc
 function ls {
-	/usr/bin/ls --color=auto -la
+	/usr/bin/ls --color=auto -la $args
 }
 
 function grep {
-	/usr/bin/grep --color=auto
+	/usr/bin/grep --color=auto $args
 }
