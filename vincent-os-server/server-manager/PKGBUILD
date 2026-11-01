@@ -1,0 +1,25 @@
+# Maintainer: Florian. M <florian.m@v38armageddon.net>
+pkgname="server-manager"
+pkgver=0.0.1
+_pkgver=0.0.1
+pkgrel=1
+pkgdesc="TUI Server Manager tool to manage Vincent OS Server."
+url="https://github.com/Vincent-OS/server-manager"
+license=("EUPL-1.2")
+arch=('x86_64')
+depends=(
+	'dotnet-runtime'
+)
+source=(
+	"$url/releases/download/v$_pkgver/server-manager-linux-standalone.tar"
+)
+sha256sums=('f91a2af747266259ddf77c61dca15054f2824f6ed3996589f423d4d19f85cd60')
+options=(!strip)
+_srcdir="usr/lib/server-manager"
+
+package() {
+	mkdir -p "$pkgdir/usr/lib/server-manager" "$pkgdir/usr/bin"
+	cp -a "$pkgsrc"* "$pkgdir/$_srcdir"
+	chmod 755 "$pkgdir/$_srcdir/server-manager"
+	ln -s "/usr/lib/server-manager/server-manager" "$pkgdir/usr/bin/server-manager"
+}

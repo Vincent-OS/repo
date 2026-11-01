@@ -1,0 +1,13 @@
+pkgbase = server-manager
+	pkgdesc = TUI Server Manager tool to manage Vincent OS Server.
+	pkgver = 0.0.1
+	pkgrel = 1
+	url = https://github.com/Vincent-OS/server-manager
+	arch = x86_64
+	license = EUPL-1.2
+	depends = dotnet-runtime
+	options = !strip
+	source = https://github.com/Vincent-OS/server-manager/releases/download/v0.0.1/server-manager-linux-standalone.tar
+	sha256sums = f91a2af747266259ddf77c61dca15054f2824f6ed3996589f423d4d19f85cd60
+
+pkgname = server-manager
